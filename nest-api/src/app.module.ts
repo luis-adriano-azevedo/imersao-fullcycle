@@ -4,14 +4,14 @@ import { MongooseModule } from '@nestjs/mongoose';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { RoutesModule } from './routes/routes.module';
-
+//ES7 decorators
 @Module({
   imports: [
     ConfigModule.forRoot(),
-    RoutesModule, 
+    RoutesModule,
     MongooseModule.forRoot(process.env.MONGO_DSN, {
       useNewUrlParser: true,
-    })
+    }),
   ],
   controllers: [AppController],
   providers: [AppService],

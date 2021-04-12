@@ -7,9 +7,9 @@ import { Route, RouteDocument } from './entities/route.entity';
 
 @Injectable()
 export class RoutesService {
-
-  constructor (@InjectModel(Route.name) private routeModel: Model<RouteDocument>,
-  ){};
+  constructor(
+    @InjectModel(Route.name) private routeModel: Model<RouteDocument>,
+  ) {}
 
   create(createRouteDto: CreateRouteDto) {
     return 'This action adds a new route';

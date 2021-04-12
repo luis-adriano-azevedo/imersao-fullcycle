@@ -4,6 +4,7 @@ import (
 	ckafka "github.com/confluentinc/confluent-kafka-go/kafka"
 	"log"
 	"os"
+	"fmt"
 )
 
 // NewKafkaProducer creates a ready to go kafka.Producer instance
@@ -24,6 +25,7 @@ func Publish(msg string, topic string, producer *ckafka.Producer) error {
 		TopicPartition: ckafka.TopicPartition{Topic: &topic, Partition: ckafka.PartitionAny},
 		Value:          []byte(msg),
 	}
+	fmt.Println(message)
 	err := producer.Produce(message, nil)
 	if err != nil {
 		return err

@@ -10,3 +10,5 @@ export class AppController {
     return this.appService.getHello();
   }
 }
+
+//HTTP - Get, Post, Put, Patch, Delete e

@@ -2,12 +2,14 @@ package kafka
 
 import (
 	"encoding/json"
-	route2 "github.com/codeedu/imersaofsfc2-simulator/application/route"
-	"github.com/codeedu/imersaofsfc2-simulator/infra/kafka"
-	ckafka "github.com/confluentinc/confluent-kafka-go/kafka"
+	"fmt"
 	"log"
 	"os"
 	"time"
+
+	route2 "github.com/codeedu/imersaofsfc2-simulator/application/route"
+	"github.com/codeedu/imersaofsfc2-simulator/infra/kafka"
+	ckafka "github.com/confluentinc/confluent-kafka-go/kafka"
 )
 
 // Produce is responsible to publish the positions of each request
@@ -26,6 +28,7 @@ func Produce(msg *ckafka.Message) {
 	}
 	for _, p := range positions {
 		kafka.Publish(p, os.Getenv("KafkaProduceTopic"), producer)
-		time.Sleep(time.Millisecond * 500)
+		fmt.Println(p)
+		time.Sleep(time.Millisecond * 300)
 	}
 }
