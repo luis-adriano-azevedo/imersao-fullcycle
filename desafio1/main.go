@@ -19,6 +19,6 @@ func index(w http.ResponseWriter, r *http.Request) {
 
 func main() {
 	http.HandleFunc("/", index)
-	fmt.Println("Servidor rodando http://localhost:8001")
-	log.Fatal(http.ListenAndServe(":8001", nil))
+	fmt.Println("Servidor rodando http://localhost:8000")
+	log.Fatal(http.ListenAndServe(":8000", nil))
 }

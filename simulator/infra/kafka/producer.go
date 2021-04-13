@@ -1,16 +1,21 @@
 package kafka
 
 import (
-	ckafka "github.com/confluentinc/confluent-kafka-go/kafka"
+	"fmt"
 	"log"
 	"os"
-	"fmt"
+
+	ckafka "github.com/confluentinc/confluent-kafka-go/kafka"
 )
 
 // NewKafkaProducer creates a ready to go kafka.Producer instance
 func NewKafkaProducer() *ckafka.Producer {
 	configMap := &ckafka.ConfigMap{
 		"bootstrap.servers": os.Getenv("KafkaBootstrapServers"),
+		"security.protocol": os.Getenv("security.protocol"),
+		"sasl.mechanisms":   os.Getenv("sasl.mechanisms"),
+		"sasl.username":     os.Getenv("sasl.username"),
+		"sasl.password":     os.Getenv("sasl.password"),
 	}
 	p, err := ckafka.NewProducer(configMap)
 	if err != nil {

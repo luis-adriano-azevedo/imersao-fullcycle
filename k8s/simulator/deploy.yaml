@@ -14,12 +14,13 @@ spec:
     spec:
       containers:
         - name: simulator
-          image: wesleywillians/imersao2-simulator:latest
+          image: azevedoluis/imersao-fsfc2-simulator:latest
           volumeMounts:
             - name: simulator-volume
               mountPath: /go/src/.env
               subPath: .env
               
+
 
       volumes:
         - name: simulator-volume

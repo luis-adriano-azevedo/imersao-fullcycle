@@ -10,5 +10,5 @@ data:
     KafkaConsumerGroupId=simulator
     security.protocol="SASL_SSL"
     sasl.mechanisms="PLAIN"
-    sasl.username="EBNIKUAMEB2PJ2TZ"
-    sasl.password="59VVz1gr7l4tl4ikK4Lzlk/vLZB++7ek5vOC73cxtNsKLW7oUtbfxj/PicpbZ9rq"
+    sasl.username="56E6DPY3IDC53PMH"
+    sasl.password="h9/CIPb5nuvaDzQj3wF1rT2ggC3PbL5qAoH0ZuY4fgAqXRbXa9+tZ2eARklrnN1x"
